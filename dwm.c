@@ -762,11 +762,13 @@ drawbar(Monitor *m)
 
 		while (c) {
 			tw = TEXTW(c->name);
-			if (tw < mw) extra += (mw - tw); else i++;
+			if (tw < mw)
+				extra += (mw - tw); else i++;
 			for (c = c->next; c && !ISVISIBLE(c); c = c->next);
 		}
 
-		if (i > 0) mw += extra / i;
+		if (i > 0)
+			mw += extra / i;
 
 		c = firstvis;
 		xx = x;
@@ -778,8 +780,9 @@ drawbar(Monitor *m)
 			tw = TEXTW(c->name);
 			w = MIN(ow, tw);
 
-			if (w > mw) w = mw;
-			
+			if (w > mw)
+				w = mw;
+
 			drw_setscheme(drw, m->sel == c ? &scheme[SchemeSel] : &scheme[SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, c->name, 0);
 			drw_rect(drw, x + 1, 1, dx, dx, c->isfixed, c->isfloating, 0);
@@ -904,10 +907,12 @@ focusonclick(const Arg *arg)
 		c = firstvis;
 		while (c) {
 			tw = TEXTW(c->name);
-			if (tw < mw) extra += (mw - tw); else i++;
+			if (tw < mw)
+				extra += (mw - tw); else i++;
 			for (c = c->next; c && !ISVISIBLE(c); c = c->next);
 		}
-		if (i > 0) mw += extra / i;
+		if (i > 0)
+			mw += extra / i;
 	}
 
 	x = m->titlebarbegin;
