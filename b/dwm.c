@@ -763,7 +763,9 @@ drawbar(Monitor *m)
 		while (c) {
 			tw = TEXTW(c->name);
 			if (tw < mw)
-				extra += (mw - tw); else i++;
+				extra += (mw - tw);
+			else
+				i++;
 			for (c = c->next; c && !ISVISIBLE(c); c = c->next);
 		}
 
@@ -908,7 +910,9 @@ focusonclick(const Arg *arg)
 		while (c) {
 			tw = TEXTW(c->name);
 			if (tw < mw)
-				extra += (mw - tw); else i++;
+				extra += (mw - tw);
+			else
+				i++;
 			for (c = c->next; c && !ISVISIBLE(c); c = c->next);
 		}
 		if (i > 0)
